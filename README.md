@@ -14,6 +14,10 @@ $ cd ./<project-path>
 $ conda create --name <name> --file requirements.txt
 ```
 
+## Making changes to ipynb
+1. Open jupyter notebook by accessing Anaconda Prompt
+2. Use command `jupyter notebook` to open up the web IDE
+
 ## Pushing changes to the repository
 **If you are working alone on a specific task, ignore this.**
 1. Create a branch with the naming convention `task--activity-surname` (ex. `lab1--naivebayes-arevalo`. the shorter the better)
