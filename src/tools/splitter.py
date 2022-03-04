@@ -24,8 +24,10 @@ def run():
     if not os.path.exists(fullPath):
         os.mkdir(fullPath)
 
-    training_split.to_csv(fullPath + "/training.csv", encoding="utf8")
-    test_split.to_csv(fullPath + "/test.csv", encoding="utf8")
+    training_split.reset_index(drop=True, inplace=True)
+    test_split.reset_index(drop=True, inplace=True)
+    training_split.to_csv(fullPath + "/training.csv", encoding="utf8", index=False)
+    test_split.to_csv(fullPath + "/test.csv", encoding="utf8",index=False)
 
 if __name__ == "__main__":
     run()
