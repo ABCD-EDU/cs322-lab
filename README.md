@@ -12,6 +12,7 @@ This repository contains all the exercises and projects for cs322 midterms
 ```
 $ cd ./<project-path>
 $ conda create --name <name> --file requirements.txt
+# conda activate <name>
 ```
 
 ## Making changes to ipynb
