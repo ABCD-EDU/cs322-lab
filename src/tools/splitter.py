@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 import os
 
 outDir = '../../res'
@@ -21,9 +22,7 @@ def run():
         os._exit(0)
 
     data = pd.read_csv("../../res/" + filePath)
-    training_split = data.sample(frac=train_percentage)
-    test_split = data.drop(training_split.index).sample(frac=test_percentage)
-    unseen_split = data.drop(training_split.index).drop(test_split.index).sample(frac=unseen_percentage)
+    training_split, test_split, unseen_split = np.split(data.sample(frac=1), [int(train_percentage*len(data)), int((train_percentage+test_percentage)*len(data))])
 
     print("Training size: ", len(training_split))
     print("Test size: ", len(test_split))
